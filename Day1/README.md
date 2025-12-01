@@ -1,5 +1,6 @@
 ## Day 1: Secret Entrance 
 
+## Part 1
 The Elves have good news and bad news.
 
 ### Good News
@@ -79,4 +80,36 @@ The dial points to **0** a total of **3 times**. Thus, the password is **3**.
 ---
 
 ### Your Task
-Analyze the rotations in your attached document(data.txt). What is the actual password to open the door?
+Analyze the rotations in your attached document (data.txt). What is the actual password to open the door?
+
+## Part 2
+
+### Updated Protocol
+You're sure that's the right password, but the door won't open. You knock, but nobody answers. You build a snowman while you think.
+
+As you're rolling the snowballs for your snowman, you find another security document that must have fallen into the snow:
+
+"Due to newer security protocols, please use password method 0x434C49434B until further notice."
+
+You remember from the training seminar that "method 0x434C49434B" means you're actually supposed to count the number of times any click causes the dial to point at 0, regardless of whether it happens during a rotation or at the end of one.
+
+#### Example Process (Updated)
+Following the same rotations as in the above example:
+1. The dial starts by pointing at **50**.
+2. Rotate `L68` → **82**; during this rotation, it points at **0** once.
+3. Rotate `L30` → **52**.
+4. Rotate `R48` → **0**.
+5. Rotate `L5` → **95**.
+6. Rotate `R60` → **55**; during this rotation, it points at **0** once.
+7. Rotate `L55` → **0**.
+8. Rotate `L1` → **99**.
+9. Rotate `L99` → **0**.
+10. Rotate `R14` → **14**.
+11. Rotate `L82` → **32**; during this rotation, it points at **0** once.
+
+In this example, the dial points at **0** three times at the end of a rotation, plus three more times during a rotation. So, the new password would be **6**.
+
+---
+
+### Your Task
+Using password method 0x434C49434B, determine the password to open the door based on the rotations in your attached document (data2.txt).
