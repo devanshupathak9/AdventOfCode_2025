@@ -59,7 +59,7 @@ public:
 int main() {
     vector<vector<char>> rollsOfPaper;
     vector<char> rolls;
-    ifstream file("data2.txt");
+    ifstream file("data.txt");
     string line;
     while (getline(file, line)) {
         rolls = {};

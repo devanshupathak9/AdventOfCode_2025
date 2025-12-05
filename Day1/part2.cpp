@@ -51,7 +51,7 @@ int main()
 {
     int initialPos = 50;
     vector<string> actions;
-    ifstream file("data2.txt");
+    ifstream file("data.txt");
     string line;
     while (getline(file, line))
     {

@@ -54,7 +54,7 @@ int main()
     // };
 
     vector<string> banks;
-    ifstream file("data2.txt");
+    ifstream file("data.txt");
     string line;
     while (getline(file, line))
     {
