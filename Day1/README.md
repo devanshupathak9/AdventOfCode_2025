@@ -112,4 +112,4 @@ In this example, the dial points at **0** three times at the end of a rotation, 
 ---
 
 ### Your Task
-Using password method 0x434C49434B, determine the password to open the door based on the rotations in your attached document (data2.txt).
+Using password method 0x434C49434B, determine the password to open the door based on the rotations in your attached document (data.txt).

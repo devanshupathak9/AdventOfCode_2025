@@ -66,7 +66,6 @@ int main() {
     }
     file.close();
 
-    // Part: 1
     ll answer = solve();
     print(answer);
     return 0;

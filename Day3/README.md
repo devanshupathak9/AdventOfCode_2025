@@ -76,4 +76,4 @@ The total output joltage is the sum of the largest joltages from each bank:
 987654321111 + 811111111119 + 434234234278 + 888911112111 = 3121910778619
 ```
 
-**What is the new total output joltage?(data2.txt)**
+**What is the new total output joltage?(data.txt)**
