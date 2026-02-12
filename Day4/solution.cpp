@@ -96,7 +96,11 @@ int main() {
     }
     file.close();
     Solution sol(grid);
-    int res1 = sol.solveP2();
+    int res1 = sol.solveP1();
     print(res1);
+    
+    Solution sol2(grid);
+    int res2 = sol2.solveP2();
+    print(res2);
     return 0;
 }
