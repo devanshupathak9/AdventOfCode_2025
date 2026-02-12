@@ -1,19 +1,17 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
-#include <string>
+#include<string>
 using namespace std;
 typedef long long ll;
 
 template <typename T>
-void print(T value) {
-    cout << value << "\n";
-}
+void print(T value) { cout << value << "\n"; }
 
-int returnMaxIndex(const string &bank, int start, int end) {
+int findMaxValue(const string &bank, int start, int end) {
     int maxIdx = -1;
     int maxVal = -1;
-    for (int i = start; i < end; i++) {
+    for (int i = start; i <= end; i++) {
         if (bank[i] - '0' > maxVal) {
             maxVal = bank[i] - '0';
             maxIdx = i;
@@ -23,52 +21,49 @@ int returnMaxIndex(const string &bank, int start, int end) {
 }
 
 class Solution {
-public:
-    int findMaxJoltP1(const string &bank) {
+public: 
+    int findMaxJoltValueP1(string bank) {
         int nxtIndex = 0;
-        int maxJolt = 0;
-        for (int i = 0; i < 2; i++) {
-            int currIndex = returnMaxIndex(bank, nxtIndex, bank.size() - 2 + i + 1);
+        int maxJoltValue = 0;
+        for(int i = 0; i < 2; i++) {
+            int currIndex = findMaxValue(bank, nxtIndex, bank.size() - 2 + i);
             nxtIndex = currIndex + 1;
-            maxJolt = maxJolt * 10 + (bank[currIndex] - '0');
+            maxJoltValue = maxJoltValue*10 + (bank[currIndex] - '0');
         }
-        return maxJolt;
+        return maxJoltValue;
     }
-    ll findMaxJoltP2(const string &bank) {
+    ll findMaxJoltValueP2(string bank) {
         int nxtIndex = 0;
-        ll maxJolt = 0;
-        for (int i = 0; i < 12; i++) {
-            int currIndex = returnMaxIndex(bank, nxtIndex, bank.size() - 2 + i + 1);
+        ll maxJoltValue = 0;
+        for(int i = 0; i < 12; i++) {
+            int currIndex = findMaxValue(bank, nxtIndex, bank.size() - 2 + i);
             nxtIndex = currIndex + 1;
-            maxJolt = maxJolt * 10 + (bank[currIndex] - '0');
+            maxJoltValue = maxJoltValue*10 + (bank[currIndex] - '0');
         }
-        return maxJolt;
+        return maxJoltValue;
     }
-
-    int solveP1(const vector<string> &banks) {
+    int solveP1(vector<string>banks) {
         int totalOutputJoltage = 0;
-        for (auto &bank : banks) {
-            int maxJolt = findMaxJoltP1(bank);
-            totalOutputJoltage += maxJolt;
+        for(auto bank: banks) {
+            int maxJoltValue = findMaxJoltValueP1(bank);
+            totalOutputJoltage += maxJoltValue;
         }
         return totalOutputJoltage;
     }
-    ll solveP2(const vector<string> &banks) {
+    ll solveP2(vector<string>banks) {
         ll totalOutputJoltage = 0;
-        for (auto &bank : banks) {
-            ll maxJolt = findMaxJoltP2(bank);
-            totalOutputJoltage += maxJolt;
+        for(auto bank: banks) {
+            ll maxJoltValue = findMaxJoltValueP2(bank);
+            totalOutputJoltage += maxJoltValue;
         }
         return totalOutputJoltage;
     }
 };
 
-int main()
-{
+int main() {
     Solution sol;
-
     string s;
-    vector<string> banks;
+    vector<string>banks;
     ifstream file("data.txt");
     while (getline(file, s)) {
         banks.push_back(s);
@@ -76,8 +71,8 @@ int main()
     file.close();
 
     int res1 = sol.solveP1(banks);
-    ll res2 = sol.solveP2(banks);
     print(res1);
+    ll res2 = sol.solveP2(banks);
     print(res2);
     return 0;
 }
